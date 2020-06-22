@@ -8,10 +8,6 @@ export default class Calendar extends React.Component {
      dateContext: moment(),
      today: moment(),
   }
-  constructor(props) {
-     super(props);
-       
-  }
    
      weekdaysShort = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
      months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
@@ -28,13 +24,13 @@ export default class Calendar extends React.Component {
       return this.state.dateContext.daysInMonth();
      }
 
-  currentDate = () => {
+    currentDate = () => {
       return this.state.dateContext.daysInMonth("date");
-  }
+     }
 
-  currentDay = () => {
+    currentDay = () => {
       return this.state.dateContext.format("D");
-  }
+     }
  
     firstDayOfMonth = () => {
       let dateContext = this.state.dateContext;
@@ -82,8 +78,6 @@ export default class Calendar extends React.Component {
    onAddYear = (e) => {
         if (e.which === 13) {
              this.setYear(e.target.value);
-             this.setState({
-                   showYearNav: false })
              }
    }
 
@@ -152,7 +146,7 @@ render() {
         <table className= "calendar">
            <thead>
                 <tr className="calendar-header">
-                    <td className= "yearmonth" colSpan="5">
+                    <td className= "year-month" colSpan="5">
                         <this.month />
                         {" "}
                         <this.year  />
